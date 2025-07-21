@@ -1,12 +1,27 @@
-# React + Vite
+# Open Newspaper
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome, mate! You've found the **Open Newspaper** project, a retro-style web project inspired by classic newspaper layouts. This project is 100% free to use (for good purposes!). If you want to make some changes, just clone this repo by running:
+```
+git clone https://github.com/bakwanj4gung/old-newspaper.git
+```
 
-Currently, two official plugins are available:
+then navigate to the project directory:
+```
+cd old-newspaper
+```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+and install the dependencies:
+```
+npm install
+```
 
-## Expanding the ESLint configuration
+finally, modify the code by opening this project with your text editor and run:
+```
+npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+to preview your changes.
+
+Good luck!
+---
+P.S: Could you give this repository a star? ⭐
