@@ -1,6 +1,6 @@
 # Newspaper Maker
 
-Welcome, mate! You've found the **Newpaper Maker** project. This project is 100% free to use (for good purposes!). If you want to make some changes, just clone this repo by running:
+Welcome! You've found the **Newspaper Maker** project. This project is 100% free to use (for good purposes!). If you want to make some changes, just clone this repo by running:
 ```
 git clone https://github.com/bakwanj4gung/old-newspaper.git
 ```
