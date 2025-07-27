@@ -1,6 +1,6 @@
-# Open Newspaper
+# Newspaper Maker
 
-Welcome, mate! You've found the **Open Newspaper** project, a retro-style web project inspired by classic newspaper layouts. This project is 100% free to use (for good purposes!). If you want to make some changes, just clone this repo by running:
+Welcome! You've found the **Newspaper Maker** project. This project is 100% free to use (for good purposes!). If you want to make some changes, just clone this repo by running:
 ```
 git clone https://github.com/bakwanj4gung/old-newspaper.git
 ```
@@ -22,6 +22,4 @@ npm run dev
 
 to preview your changes.
 
-Good luck!
----
-P.S: Could you give this repository a star? ⭐
+**Good luck!**
