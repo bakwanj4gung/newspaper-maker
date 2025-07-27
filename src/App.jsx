@@ -1,46 +1,44 @@
-import { useEffect, useState } from "react"
-import Header from "./components/Header"
+import React, { Suspense, useEffect, useState } from "react"
 import PrintOptions from "./components/PrintOptions"
+import settings from "./lib/settings";
 
 function App() {
-    const [paperSize, setPaperSize] = useState('a3');
+    const [settingId, setSettingId] = useState(3);
+    const [setting, setSetting] = useState(settings[settingId]);
 
-    const handlePaperSize = (size) => {
-        setPaperSize(size);
+    const Header = React.lazy(() => import(`./pages/${setting.name}/Header.jsx`));
+    const Body = React.lazy(() => import(`./pages/${setting.name}/Body.jsx`));
+
+    const handlePaperSize = (id) => {
+        setSettingId(id);
     }
 
     useEffect(() => {
-    const styleId = 'dynamic-print-style';
-    let styleEl = document.getElementById(styleId);
+        setSetting(settings[settingId])
+    }, [settingId])
 
-    if (!styleEl) {
-        styleEl = document.createElement('style');
-        styleEl.id = styleId;
-        document.head.appendChild(styleEl);
-    }
+    useEffect(() => {
+        const styleId = 'dynamic-print-style';
+        let styleEl = document.getElementById(styleId);
 
-    let pageCSS = '';
-    if (paperSize === 'a4') {
-            pageCSS = `
-                @page {
-                    size: A4 landscape;
-                }
-            `;
-        } else if (paperSize === 'a3') {
-            pageCSS = `
-                @page {
-                    size: A3 landscape;
-                }
-            `;
+        if (!styleEl) {
+            styleEl = document.createElement('style');
+            styleEl.id = styleId;
+            document.head.appendChild(styleEl);
         }
 
-        styleEl.innerHTML = pageCSS;
-    }, [paperSize])
+        styleEl.innerHTML = `@page {
+            size: ${setting.cssPageSize}
+        }`;
+    }, [setting])
 
     return (
-        <div className={`${paperSize == 'a4' ? 'w-[297mm] h-[210mm] text-xs' : 'w-[420mm] h-[297mm] text-sm'} mx-auto overflow-y-auto default-background px-2 md:px-10`}>
+        <div className={`${setting.tailwindPageSize} ${setting.textSize} mx-auto overflow-y-auto default-background p-4`}>
             <PrintOptions onPrint={handlePaperSize}/>
-            <Header paperSize={paperSize} />
+            <Suspense fallback={<div>Loading...</div>}>
+                <Header />
+                <Body />
+            </Suspense>
         </div>
     )
 }

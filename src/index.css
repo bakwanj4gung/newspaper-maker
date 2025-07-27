@@ -14,7 +14,7 @@
   --font-main-header-footer: "EB Garamond", serif;
   --font-default: "Amiri", serif;
   --text-shadow-main-logo-mobile: 1px 1px 0px var(--color-main-background), 1.5px 2.5px 0px var(--color-orange-950);
-  --text-shadow-main-logo: 1.5px 2.5px 0px var(--color-main-background), 2.5px 3.5px 0px var(--color-orange-950);
+  --text-shadow-main-logo: 2px 2px 0px var(--color-main-background), 4px 4px 0px var(--color-orange-950);
 
   --animate-spin: spin 10s linear infinite;
 
